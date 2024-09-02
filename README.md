@@ -1,5 +1,6 @@
 # Ollama Performance Testing Tool
-[中文版本](https://github.com/SECSpell/Ollama_bench/blob/main/README_zh.md
+[中文版本](https://github.com/SECSpell/Ollama_bench/blob/main/README_zh.md)
+
 This is a performance testing tool written in Go, primarily designed to test the local generation speed of Ollama. The tool also supports testing other services compatible with the OpenAI API interface specification.
 
 ## Testing Principle

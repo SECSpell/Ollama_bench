@@ -1,5 +1,5 @@
 # Ollama 性能测试工具
-[English Version](https://github.com/SECSpell/Ollama_bench/blob/main/README.md
+[English Version](https://github.com/SECSpell/Ollama_bench/blob/main/README.md)
 
 这是一个用Go语言编写的性能测试工具，主要用于测试Ollama在本地的生成速度。该工具也支持测试其他兼容OpenAI API接口规范的服务。
 
