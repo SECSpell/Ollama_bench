@@ -41,9 +41,15 @@ jobs:
         for file in build/*; do
           filename=$(basename "$file")
           echo "Uploading $filename"
-          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+          upload_url="${{ steps.create_release.outputs.upload_url }}"
+          upload_url="${upload_url%\{*}"  # 移除 URL 末尾的 {?name,label}
+          echo "Upload URL: $upload_url?name=$filename"
+          curl -X POST \
+               -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
                -H "Content-Type: application/octet-stream" \
                --data-binary @"$file" \
-               "${{ steps.create_release.outputs.upload_url }}?name=$filename"
+               -f \
+               -v \
+               "$upload_url?name=$filename"
         done
       shell: bash
