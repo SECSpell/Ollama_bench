@@ -38,6 +38,6 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./ollama_bench  # 假设编译后的二进制文件名为 ollama_bench
+        asset_path: ./build  # 假设编译后的二进制文件名为 ollama_bench
         asset_name: ollama_bench
         asset_content_type: application/octet-stream
