@@ -1,21 +1,21 @@
 package main
 
 import (
-	"bytes"      // 提供了操作字节切片的函数
-	"context"    // 提供了跨 API 边界的取消、超时和截止日期功能
-	"encoding/json"  // 实现了 JSON 的编解码
-	"fmt"        // 实现格式化 I/O
-	"io"         // 提供了 I/O 原语的基本接口
-	"log"        // 实现了简单的日志功能
-	"math/rand"  // 实现伪随机数生成器
-	"net/http"   // 提供 HTTP 客户端和服务器实现
-	"os"         // 提供了操作系统函数的平台无关接口
-	"path/filepath"  // 实现了兼容各操作系统的文件路径操作
-	"strconv"    // 实现了基本数据类型和其字符串表示的相互转换
-	"sync"       // 提供了基本的同步原语
-	"time"       // 提供了时间的测量和显示功能
+	"bytes"      // 提供了操作字节切片的函数 // Provides functions for manipulating byte slices
+	"context"    // 提供了跨 API 边界的取消、超时和截止日期功能 // Provides cancellation, timeout, and deadline functionality across API boundaries
+	"encoding/json"  // 实现了 JSON 的编解码 // Implements encoding and decoding of JSON
+	"fmt"        // 实现格式化 I/O // Implements formatted I/O
+	"io"         // 提供了 I/O 原语的基本接口 // Provides basic interfaces to I/O primitives
+	"log"        // 实现了简单的日志功能 // Implements a simple logging package
+	"math/rand"  // 实现伪随机数生成器 // Implements pseudo-random number generators
+	"net/http"   // 提供 HTTP 客户端和服务器实现 // Provides HTTP client and server implementations
+	"os"         // 提供了操作系统函数的平台无关接口 // Provides a platform-independent interface to operating system functionality
+	"path/filepath"  // 实现了兼容各操作系统的文件路径操作 // Implements utility routines for manipulating filename paths in a way compatible with all supported operating systems
+	"strconv"    // 实现了基本数据类型和其字符串表示的相互转换 // Implements conversions to and from string representations of basic data types
+	"sync"       // 提供了基本的同步原语 // Provides basic synchronization primitives
+	"time"       // 提供了时间的测量和显示功能 // Provides functionality for measuring and displaying time
 
-	"golang.org/x/sync/semaphore"  // 提供了带权重的信号量实现
+	"golang.org/x/sync/semaphore"  // 提供了带权重的信号量实现 // Provides a weighted semaphore implementation
 )
 
 var questions = []string{
