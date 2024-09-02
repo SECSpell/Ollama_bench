@@ -1,5 +1,5 @@
 # Ollama Performance Testing Tool
-
+[中文版本](https://github.com/SECSpell/Ollama_bench/blob/main/README_zh.md
 This is a performance testing tool written in Go, primarily designed to test the local generation speed of Ollama. The tool also supports testing other services compatible with the OpenAI API interface specification.
 
 ## Testing Principle
@@ -23,12 +23,12 @@ This tool sends multiple concurrent requests to the Ollama API service, with eac
 4. You can also specify the number of concurrent requests (C) and the total number of requests (N):
 
    ```
-   ./ollama-performance-test <C> <N>
+   ./ollama_bench_darwin_arm64 <C> <N>
    ```
 
    For example:
    ```
-   ./ollama-performance-test 5 20
+   ./ollama_bench_darwin_arm64 5 20
    ```
    This will use 5 concurrent requests and send a total of 20 requests.
 

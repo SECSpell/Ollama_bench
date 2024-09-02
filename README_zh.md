@@ -1,4 +1,5 @@
 # Ollama 性能测试工具
+[English Version](https://github.com/SECSpell/Ollama_bench/blob/main/README.md
 
 这是一个用Go语言编写的性能测试工具，主要用于测试Ollama在本地的生成速度。该工具也支持测试其他兼容OpenAI API接口规范的服务。
 
@@ -23,12 +24,12 @@
 4. 您也可以指定并发数（C）和总请求数（N）：
 
    ```
-   ./ollama-performance-test <C> <N>
+   ./ollama_bench_darwin_arm64 <C> <N>
    ```
 
    例如：
    ```
-   ./ollama-performance-test 5 20
+   ./ollama_bench_darwin_arm64 5 20
    ```
    这将使用5个并发请求，总共发送20个请求。
 
