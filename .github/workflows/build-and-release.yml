@@ -32,12 +32,14 @@ jobs:
         draft: false
         prerelease: false
 
-    - name: Upload Release Asset
-      uses: actions/upload-release-asset@v1
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        upload_url: ${{ steps.create_release.outputs.upload_url }}
-        asset_path: ./build/ollama_bench  # 修改这里，指定具体的文件路径
-        asset_name: ollama_bench
-        asset_content_type: application/octet-stream
+    - name: Upload Release Assets
+      run: |
+        for file in build/*; do
+          filename=$(basename "$file")
+          echo "Uploading $filename"
+          curl -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+               -H "Content-Type: application/octet-stream" \
+               --data-binary @"$file" \
+               "${{ steps.create_release.outputs.upload_url }}?name=$filename"
+        done
+      shell: bash
