@@ -37,15 +37,17 @@ This tool sends multiple concurrent requests to the Ollama API service, with eac
 
 Upon first launch, the tool will automatically create a `config.json` file in the same directory. You can modify this configuration as needed to support more models.
 
-## Test Results on Various Platforms for llama3.1:latest (8B)
+## Default mode test results for various platforms, using llama3.1:latest (8B q4_0) model with 1 concurrent request and 4 total requests.
 | Test Platform | Average Tokens Generated per Second | Notes |
 | --- | --- | --- |
-| MacBook Pro M1 Pro | 30 tokens/s |  |
-| AMD Ryzen R7-7840H (780M GPU) | 11 tokens/s | CPU inference only |
-| AMD Ryzen R7-7840H (780M GPU) | 17 tokens/s | iGPU inference, [Third-party compiled OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
-| AMD Ryzen R7-8845HS (780M GPU) | 17 tokens/s | iGPU inference, [Third-party compiled OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
-| Nvidia P106-100 (6G) | 25 tokens/s | Docker Ollama inference |
+| MacBookPro M1Pro(14cores GPU) | 30 tokens/s |  |
+| MacBookPro M3Pro(14cores GPU) | 26 tokens/s | Lags behind M1Pro, possibly due to lower memory bandwidth than M1Pro. |
+| AMD Ryzen R7-7840H (780M GPU) | 11 tokens/s | Pure CPU inference |
+| AMD Ryzen R7-7840H (780M GPU) | 17 tokens/s | Integrated GPU inference, [Third-party compiled OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
+| AMD Ryzen R7-8845HS (780M GPU) | 17 tokens/s | Integrated GPU inference, [Third-party compiled OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
+| Nvidia P106-100(6G) | 25 tokens/s | Docker ollama inference |
 | Nvidia 2080ti (22G) | 86 tokens/s | GPU with modified VRAM |
+| AMD RX7900XT (20G) | 113 tokens/s |  |
 | Nvidia 3090 (24G) | 124 tokens/s |  |
 | Groq Cloud | 581 tokens/s | Test server on Google Cloud US East, using llama-3.1-8b-instant model |
 ---
