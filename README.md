@@ -36,3 +36,16 @@ This tool sends multiple concurrent requests to the Ollama API service, with eac
 ## Configuration
 
 Upon first launch, the tool will automatically create a `config.json` file in the same directory. You can modify this configuration as needed to support more models.
+
+## Test Results on Various Platforms for llama3.1:latest (8B)
+| Test Platform | Average Tokens Generated per Second | Notes |
+| --- | --- | --- |
+| MacBook Pro M1 Pro | 30 tokens/s |  |
+| AMD Ryzen R7-7840H (780M GPU) | 11 tokens/s | CPU inference only |
+| AMD Ryzen R7-7840H (780M GPU) | 17 tokens/s | iGPU inference, [Third-party compiled OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
+| AMD Ryzen R7-8845HS (780M GPU) | 17 tokens/s | iGPU inference, [Third-party compiled OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
+| Nvidia P106-100 (6G) | 25 tokens/s | Docker Ollama inference |
+| Nvidia 2080ti (22G) | 86 tokens/s | GPU with modified VRAM |
+| Nvidia 3090 (24G) | 124 tokens/s |  |
+| Groq Cloud | 581 tokens/s | Test server on Google Cloud US East, using llama-3.1-8b-instant model |
+---

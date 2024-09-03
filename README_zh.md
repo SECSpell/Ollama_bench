@@ -36,3 +36,16 @@
 ## 配置
 
 工具首次启动会在同一目录下自动创建一个`config.json`文件，您可以根据需要修改配置，从而支持更多的模型。
+
+## 部分平台的测试结果，llama3.1:latest（8B）
+| 测试平台 | 平均每秒生成token数量 | 备注 |
+| --- | --- | --- |
+| MacBook Pro M1 Pro | 30token/s |  |
+| AMD Ryzen R7-7840H（780M GPU） | 11token/s | 纯 CPU 推理 |
+| AMD Ryzen R7-7840H（780M GPU） | 17token/s | 核显 GPU 推理，[第三方编译OLLAMA](https://github.com/likelovewant/ollama-for-amd) |
+| AMD Ryzen R7-8845HS（780M GPU） | 17token/s | 核显 GPU 推理，[第三方编译OLLAMA](https://github.com/likelovewant/ollama-for-amd)  |
+| Nvidia P106-100(6G) | 25token/s | docker ollama 推理 |
+| Nvidia 2080ti（22G） | 86token/s |  GPU 魔改过显存 |
+|  Nvidia 3090（24G） | 124token/s |  |
+|  Groq Cloud | 581token/s | 测试服务器为谷歌云美东节点，模型使用llama-3.1-8b-instant |
+---
