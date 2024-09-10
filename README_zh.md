@@ -1,11 +1,11 @@
-# Ollama 性能测试工具
+# Ollama 推理性能测试工具
 [English Version](https://github.com/SECSpell/Ollama_bench/blob/main/README.md)
 
-这是一个用Go语言编写的性能测试工具，主要用于测试Ollama在本地的生成速度。该工具也支持测试其他兼容OpenAI API接口规范的服务。
+这是一个用Go语言编写的推理性能测试工具，主要用于测试Ollama在本地的推理生成速度。该工具也支持测试其他兼容OpenAI API接口规范的生成服务。
 
 ## 测试原理
 
-本工具通过并发发送多个请求到Ollama API服务，每个请求包含一个随机选择的问题。工具会记录总的token数量和请求时间，最后计算出平均每个请求的时间和每秒生成的token数量，从而评估该Ollama API的性能。
+本工具通过并发发送多个请求到Ollama API服务，每个请求包含一个随机选择的问题。工具会记录总的token数量（包含输出和输入）和请求时间，最后计算出平均每个请求的时间和每秒生成的token数量，从而评估该Ollama API的性能。
 
 ## 使用方法
 

@@ -203,7 +203,7 @@ func main() {
 
 	// 添加英文提示信息
 	// Add English prompt message
-	fmt.Println("Starting request test, please wait...")
+	fmt.Println("Starting performance benchmark, please wait...")
 
 	for i := 0; i < totalRequests; i++ {
 		wg.Add(1)
